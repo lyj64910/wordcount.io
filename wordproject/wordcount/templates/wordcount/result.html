@@ -1,0 +1,48 @@
+<!Doctype html >
+<html>
+<head>
+        <title>CSS</title>
+        <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
+
+
+        <style>
+                img {max-width: 80%; 
+                            width: 80%}
+                </style>
+
+        <style>
+        body {
+           
+            padding: 100px 0px;
+            text-align: center;
+            background-color: #37C08E
+            }
+
+        h1{ 
+            font-family: 'Black Han Sans', sans-serif;
+            font-size: 25px;
+            
+            color: #0E0562
+            }
+        </style>
+</head>
+
+<body>
+    <img style="-webkit-user-select: none;" src="http://imgnn.seoul.co.kr/img//upload/2014/01/14/SSI_20140114151740_V.JPG">
+    <br>
+    <h1>당신이 입력한 텍스트는 {{ total }} 로 구성되어 있습니다. </h1>
+
+    <a href = "{% url 'home' %}"> 다시 하기 </a>
+    <br>
+    <h2> 입력한 테스트 : </h2>
+    {{ fulltext }}
+
+    <h2> 단어 카운트 : </h2>
+    {% for word, countTotal in dictionary %}
+
+    {{ word }} - {{ countTotal }}
+    <br>
+    {%endfor%}
+</body>
+
+</html>

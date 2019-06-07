@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+    <h1>자세히 보자</h1>
+    <div class="post-items">
+        <div class="post-items-body">
+            <span class="post-title">{{ post.title  }}</span>
+            <span class="post-date">{{ post.pub_date }}</span>
+            <br>
+            <br>
+            <span class="post-body">{{ post.body }}
+                <a href="{% url 'home' %}">돌아가기</a></span>
+        </div>
+    </div>
+    <div class="post-items-img">
+        <span class="post-img">
+            {% if post.image %}
+                <img src="{{ post.image.url }}" alt="">
+            {% else %}
+                <img src="{% static 'giraffe.jpg' %}" alt="">
+            {% endif %}
+        </span>
+    </div>
+
+{% endblock %}
